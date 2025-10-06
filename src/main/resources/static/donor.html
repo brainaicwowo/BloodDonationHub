@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="form-container" id="addDonorContainer">
+        <div class="form-box">
+            <div class="form-header">
+                <i class="fas fa-user-plus icon"></i>
+                <h2>Become a Blood Donor</h2>
+                <p>Your donation can save lives. Please fill out the form below.</p>
+            </div>
+            <form id="addDonorForm">
+                <div class="input-group">
+                    <label for="donorName"><i class="fas fa-user"></i> Full Name</label>
+                    <input type="text" id="donorName" name="name" placeholder="Enter your full name" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="bloodGroup"><i class="fas fa-tint"></i> Blood Group</label>
+                    <select id="bloodGroup" name="bloodGroup" required>
+                        <option value="" disabled selected>Select your blood group</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="donorPhone"><i class="fas fa-phone"></i> Phone Number</label>
+                    <input type="tel" id="donorPhone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="donorEmail"><i class="fas fa-envelope"></i> Email Address</label>
+                    <input type="email" id="donorEmail" name="email" placeholder="Enter your email address" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="lastDonatedDate"><i class="fas fa-calendar-alt"></i> Last Donated Date (Optional)</label>
+                    <input type="date" id="lastDonatedDate" name="lastDonatedDate">
+                </div>
+
+                <button type="submit" class="submit-btn">Register as Donor</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="dashboard-container" id="donorDashboard" style="display:none;">
+        <div class="dashboard-header">
+            <h2>Welcome, <span id="donorNameDisplay"></span>!</h2>
+            <button class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </div>
+        <div class="dashboard-content">
+            <div class="info-card">
+                <h3>Your Information</h3>
+                <p><strong>Blood Group:</strong> <span id="donorBloodGroupDisplay"></span></p>
+                <p><strong>Phone:</strong> <span id="donorPhoneDisplay"></span></p>
+                <p><strong>Email:</strong> <span id="donorEmailDisplay"></span></p>
+                <p><strong>Status:</strong> <span class="status-verified"><i class="fas fa-check-circle"></i> Verified</span></p>
+            </div>
+            <div class="notifications-card">
+                <h3>Notifications</h3>
+                <p>You have no new notifications.</p>
+                <a href="donor_notifications.html" class="view-all-btn">View All</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
